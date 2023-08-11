@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        Bloom design
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  </head>
+    
+  <body>
+      
+    <nav>
+      <ul>
+        <li onclick="openHome()"><i class="fas fa-home"></i></li>
+        <li>Showcase</li>
+        <li>Services</li>
+        <li onclick="openShop()" class="nav-active">Shop</li>
+        <li>Story</li>
+        <div class="icons">
+          <li onclick="openCart()"><i class="fas fa-shopping-cart"></i></li>
+          <li><i class="fas fa-search"></i></li>
+          <li><i class="fas fa-user"></i></li>
+      </div>
+      </ul>
+    </nav>
+
+    <div class="search-container">
+      <input class="shop-search" type="search" placeholder="Search...">
+      <button class="search-button"><i class="fas fa-search"></i></button>
+    </div>
+    
+
+    <div class="grid-container">
+      <div class="grid-item" onclick="openItem('darkmist')">
+        <img src="images/blue-sofa.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Darkmist-sofa</p>
+          <p>670€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('sage')">
+        <img src="images/green-chair.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Sage-chair</p>
+          <p>130€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('shiny')">
+        <img src="images/lamps.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Shiny-lamps</p>
+          <p>110€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('snowfall')">
+        <img src="images/beige-chair.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Snowfall-chair</p>
+          <p>120€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('blush')">
+        <img src="images/pink-chair.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Blush-sofa</p>
+          <p>230€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('fair')">
+        <img src="images/white-table.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Fair-table</p>
+          <p>135€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('sunshine')">
+        <img src="images/yellow-sofa.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Sunshine-sofa</p>
+          <p>720€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('light')">
+        <img src="images/tv-table.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Light-shelf</p>
+          <p>215€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('marshmallow')">
+        <img src="images/hat-lamp.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Marshmallow-lamp</p>
+          <p>90€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('pedal')">
+        <img src="images/white-sofa.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Pedal-sofa</p>
+          <p>680€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('honey')">
+        <img src="images/wooden-shelf.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Honey-shelf</p>
+          <p>240€</p>
+        </div>
+      </div>
+      <div class="grid-item" onclick="openItem('windy')">
+        <img src="images/rocking-chair.jpg" alt="flowers">
+        <div class="item-container">
+          <p>Windy-rocking chair</p>
+          <p>110€</p>
+        </div>
+      </div>
+    </div>
+
+    <script src = "js/main.js" ></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        Bloom design
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  </head>
+    
+  <body>
+      
+    <nav>
+      <ul>
+        <li onclick="openHome()"><i class="fas fa-home"></i></li>
+        <li>Showcase</li>
+        <li>Services</li>
+        <li onclick="openShop()" class="nav-active">Shop</li>
+        <li>Story</li>
+        <div class="icons">
+          <li onclick="openCart()"><i class="fas fa-shopping-cart"></i></li>
+          <li><i class="fas fa-search"></i></li>
+          <li><i class="fas fa-user"></i></li>
+      </div>
+      </ul>
+    </nav>
+
+    <div class="zoomed-item-container">
+        <img class="js-item-image item-image">
+
+        <div class="item-info">
+            
+            <p class="js-item-name item-name"></p>
+            <p class="js-item-price item-price"></p>
+
+            <div class="input-wrapper">
+                <input type="number" class="input" value="1" min="1">
+                <div class="input-control">
+                    <button class="plus" onclick="increment()">+</button>
+                    <button class="minus" onclick="decrement()">-</button>
+                </div>
+            </div>
+
+            <button onclick="addCart()" class="add-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <script src = "js/item.js" ></script>
+  </body>
+</html>

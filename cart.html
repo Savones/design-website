@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        Bloom design
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  </head>
+    
+  <body>
+      
+    <nav>
+      <ul>
+        <li onclick="openHome()"><i class="fas fa-home"></i></li>
+        <li>Showcase</li>
+        <li>Services</li>
+        <li onclick="openShop()">Shop</li>
+        <li>Story</li>
+        <div class="icons">
+          <li class="nav-active"><i class="fas fa-shopping-cart"></i></li>
+          <li><i class="fas fa-search"></i></li>
+          <li><i class="fas fa-user"></i></li>
+      </div>
+      </ul>
+    </nav>
+
+    <h2 class="cart-header">Your Cart</h2>
+    <div class="cart-container">
+        <div class="cart-items-container"></div>
+    </div>
+
+    <script src = "js/cart.js" ></script>
+  </body>
+</html>
