@@ -74,3 +74,28 @@ function openItem(item) {
 document.getElementById("menu-icon").addEventListener("click", function () {
   document.getElementById("menu").classList.toggle("active");
 });
+
+// new in shop slider
+
+const prevButton = document.getElementById('prevBtn');
+const nextButton = document.getElementById('nextBtn');
+const slider = document.querySelector('.new-items');
+const sliderWidth = slider.offsetWidth;
+const sliderItemWidth = 300 + 20; // Image width + margin
+const numOriginalItems = slider.children.length / 2; // Number of original items
+let currentPosition = 0;
+
+nextButton.addEventListener('click', () => {
+    currentPosition = (currentPosition + 1) % numOriginalItems;
+    updateSliderPosition();
+});
+
+prevButton.addEventListener('click', () => {
+    currentPosition = (currentPosition - 1 + numOriginalItems) % numOriginalItems;
+    updateSliderPosition();
+});
+
+function updateSliderPosition() {
+    const offset = -currentPosition * sliderItemWidth;
+    slider.style.transform = `translateX(${offset}px)`;
+}

@@ -4,25 +4,31 @@
     <title>
         Bloom design
     </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   </head>
     
   <body>
       
-    <nav>
-      <ul>
-        <li onclick="openHome()"><i class="fas fa-home"></i></li>
-        <li>Showcase</li>
-        <li>Services</li>
-        <li onclick="openShop()" class="nav-active">Shop</li>
-        <li>Story</li>
-        <div class="icons">
-          <li onclick="openCart()"><i class="fas fa-shopping-cart"></i></li>
-          <li><i class="fas fa-search"></i></li>
-          <li><i class="fas fa-user"></i></li>
+    <nav class="navbar">
+      <div class="menu-icon" id="menu-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
       </div>
+      <ul class="menu" id="menu">
+          <li>Showcase</li>
+          <li>Services</li>
+          <li onclick="openShop()"class="nav-active">Shop</li>
+          <li>Story</li>
       </ul>
+      <div class="icons">
+        <li onclick="openHome()"><i class="fas fa-home"></i></li>
+        <li onclick="openCart()"><i class="fas fa-shopping-cart"></i></li>
+        <li><i class="fas fa-search"></i></li>
+        <li><i class="fas fa-user"></i></li>
+      </div>
     </nav>
 
     <div class="search-container">
@@ -121,3 +127,4 @@
     <script src = "js/main.js" ></script>
   </body>
 </html>
+

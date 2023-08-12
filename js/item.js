@@ -1,15 +1,3 @@
-function openShop() {
-    window.location.href = 'shop.html';
-  }
-
-function openCart() {
-    window.location.href = 'cart.html';
-}
-
-function openHome() {
-    window.location.href = 'index.html';
-  }
-
 const itemName = JSON.parse(localStorage.getItem('itemName'));
 const item = JSON.parse(localStorage.getItem(`${itemName}`));
 

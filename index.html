@@ -24,18 +24,18 @@
           <div class="bar"></div>
       </div>
       <ul class="menu" id="menu">
-          <li class="nav-active"><i class="fas fa-home"></i></li>
           <li>Showcase</li>
           <li>Services</li>
           <li onclick="openShop()">Shop</li>
           <li>Story</li>
-          <div class="icons">
-              <li onclick="openCart()"><i class="fas fa-shopping-cart"></i></li>
-              <li><i class="fas fa-search"></i></li>
-              <li><i class="fas fa-user"></i></li>
-          </div>
       </ul>
-  </nav>
+      <div class="icons">
+        <li onclick="openHome()" class="nav-active"><i class="fas fa-home"></i></li>
+        <li onclick="openCart()"><i class="fas fa-shopping-cart"></i></li>
+        <li><i class="fas fa-search"></i></li>
+        <li><i class="fas fa-user"></i></li>
+      </div>
+    </nav>
   
 
     <div class="front-frame">
@@ -44,16 +44,29 @@
       <p>–– Timeless Interior Elegance ––</p>
     </div>
 
-    <div class="new-container">
-      <h1>New in Shop</h1>
-      <ul class="new-items">
-          <li><img src="images/pink-chair.jpg" alt="flowers"></li>
-          <li><img src="images/white-table.jpg" alt="flowers"></li>
-          <li><img src="images/tv-table.jpg" alt="flowers"></li>
-      </ul>
+    <div class="new-view">
+      <button class="arrow left" id="prevBtn"></button>
+      <div class="new-container" id="sliderContainer">
+          <h1>New in Shop</h1>
+          <ul class="new-items" id="slider">
+            <li><img src="images/yellow-sofa.jpg" alt="flowers"></li>
+            <li><img src="images/pink-chair.jpg" alt="flowers"></li>
+            <li><img src="images/white-table.jpg" alt="flowers"></li>
+            <li><img src="images/tv-table.jpg" alt="flowers"></li>
+            <li><img src="images/wooden-shelf.jpg" alt="flowers"></li>
+
+            <li><img src="images/yellow-sofa.jpg" alt="flowers"></li>
+            <li><img src="images/pink-chair.jpg" alt="flowers"></li>
+            <li><img src="images/white-table.jpg" alt="flowers"></li>
+            <li><img src="images/tv-table.jpg" alt="flowers"></li>
+            <li><img src="images/wooden-shelf.jpg" alt="flowers"></li>
+          </ul>
+      </div>
+      <button class="arrow right" id="nextBtn"></button>
   </div>
   
 
     <script src = "js/main.js" ></script>
   </body>
 </html>
+

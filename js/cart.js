@@ -37,3 +37,4 @@ document.querySelector(`.cart-container`)
         <p>Total: ${total + 15} €</p>
         <button>Proceed to Checkout</button>
         </div></div>`;
+
