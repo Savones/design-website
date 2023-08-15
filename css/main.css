@@ -24,7 +24,11 @@ button {
 nav {
     display: flex;
     justify-content: center;
-    background-color: #202443;
+    background-color: #8da278;
+    /* background-color: #f2a896; */
+    background-color: #a59282;
+    /* background-color: #9FA2B2; */
+    /* background-color: #9b826f; */
     width: 100%;
     position: fixed;
     z-index: 100;
@@ -60,11 +64,11 @@ nav li {
 }
 
 nav li:hover, .nav-active {
-    color: #e8ac54;
+    color: #fce3dd
 }
 
 .menu-icon:hover .bar {
-    background-color: #e8ac54;
+    background-color: #fce3dd;
 }
 
 /* Hamburger icon */
@@ -103,7 +107,7 @@ nav li:hover, .nav-active {
     nav ul{
         width: auto;
         height: 130px;
-        background-color: #202443;
+        background-color: #a59282;
         margin-top: 50px;
         position: absolute;
         padding: 10px;
@@ -126,36 +130,67 @@ nav li:hover, .nav-active {
     display: flex;
     flex-direction: column;
     width: auto;
-    margin-top: 75px;
+    margin-top: 10px;
 }
 
-.front-frame img {
-    width: 1200px;
+.main-img {
+    width: 1500px;
     align-self: center;
+}
+
+.flower {
+    position: absolute;
+    align-self: center;
+    margin-top: 75px;
+    margin-left: 470px;
+}
+
+.flower-head {
+    width: 100px;
+    height: 30px;
+    border-radius: 40px;
+    background-color: #b08da3;
+    margin-top: 50px;
+}
+  
+.flower-head::after, .flower-head::before {
+    content: '';
+    position: absolute;
+    background-color: #b08da3;
+    border-radius: 40px;
+    width: 100px;
+    height: 30px;
+    transform: rotate(60deg);
+}
+  
+.flower-head::before {
+    transform: rotate(-60deg);
 }
 
 .front-frame h1 {
     text-transform: uppercase;
-    font-size: 120px;
+    font-size: 140px;
     margin: 0;
     font-weight: bold;
     background-image: linear-gradient(
      to right,
      #462523 0,
-     #b98940 20%,
+     #b98940 10%,
      #f6e27a 45%,
      #fcefae 50%,
      #f6e27a 55%,
-     #b98940 80%,
+     #b98940 90%,
      #462523 100%
      );
     color:transparent;
     -webkit-background-clip:text;
+    color: #fce3dd;
+    z-index: 10;
 }
 
 .bloom-text {
     position: absolute;
-    padding: 50px;
+    padding: 100px;
     align-self: center;
 }
 
@@ -163,51 +198,91 @@ nav li:hover, .nav-active {
     font-style: italic;
     position: absolute;
     align-self: center;
-    padding-top: 160px;
+    padding-top: 220px;
     font-size: 30px;
     color: #f8f8f8;
 }
 
 @media screen and (max-width: 800px) {
     .front-frame p {
+        margin-top: 30px;
         font-size: 22px;
     }
     .front-frame h1 {
+        margin-top: 40px;
         font-size: 100px;
     }
+
+.flower {
+    margin-top: 105px;
+    margin-left: 330px;
+}
+
+.flower-head {
+    width: 60px;
+    height: 18px;
+    border-radius: 40px;
+}
+  
+.flower-head::after, .flower-head::before {
+    border-radius: 40px;
+    width: 60px;
+    height: 18px;
+}
+
 }
 
 /* new items */
 
-.new-container h1{
-    font-size: 38px;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
 .new-view {
     position: absolute;
-    margin-top: 950px;
+    margin-top: 900px;
     width: 80%;
     display: flex;
     justify-content: space-evenly;
 }
 
 .new-container {
-    background-color: #202443;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    /* background-color: #A4907C; */
     text-transform: uppercase;
-    width: 60%;
+    width: 75%;
     text-align: center;
-    padding-bottom: 80px;
     overflow: hidden;
     white-space: nowrap;
 }
 
+.new-container h1{
+    position: absolute;
+    font-size: 38px;
+    align-self: flex-start;
+    color: #56394b;
+    /* color: #504136; */
+    margin-top: 20px;
+}
+
+.new-button{
+    position: absolute;
+    align-self: flex-end;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    font-size: 26px;
+    padding: 15px;
+    border: 2px solid #56394b;
+    /* background-color: #A4907C; */
+    background-color: #ffffff;
+    color: #56394b;
+    border-radius: 4px;
+}
+
 .new-items {
+    align-self: center;
     display: inline-block;
     list-style: none;
     padding: 0;
-    /* margin: 0; */
+    transition: 0.6s;
 }
 
 .new-items li {
@@ -228,8 +303,9 @@ nav li:hover, .nav-active {
     transform: scale(1.03);
 }
 
+
 .arrow {
-    border: solid #202443;
+    border: solid #500232;
     border-width: 0 5px 5px 0;
     padding: 10px;
     z-index: 200;
@@ -257,6 +333,32 @@ nav li:hover, .nav-active {
     }
 }
 
+/* rooms view */
+
+.rooms-view {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 850px;
+    gap: 10px;
+    margin-bottom: 1000px;
+    background-color: #fdf2ef;
+    padding: 50px;
+    height: 550px;
+}
+
+.rooms-view img {
+    width: 600px;
+    height: 400px;
+    align-self: flex-end;
+}
+
+.rooms-view h1 {
+    color: #56394b;
+    position: absolute;
+    align-self: flex-start;
+    font-size: 42px;
+}
 
 /* shop grid */
 

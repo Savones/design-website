@@ -83,7 +83,11 @@ const slider = document.querySelector('.new-items');
 const sliderWidth = slider.offsetWidth;
 const sliderItemWidth = 300 + 20; // Image width + margin
 const numOriginalItems = slider.children.length / 2; // Number of original items
-let currentPosition = 0;
+const initialPosition = Math.floor(numOriginalItems / 2); // Initial position for center alignment
+let currentPosition = initialPosition;
+
+// Initialize slider position
+updateSliderPosition();
 
 nextButton.addEventListener('click', () => {
     currentPosition = (currentPosition + 1) % numOriginalItems;
@@ -96,6 +100,6 @@ prevButton.addEventListener('click', () => {
 });
 
 function updateSliderPosition() {
-    const offset = -currentPosition * sliderItemWidth;
+    const offset = -currentPosition * sliderItemWidth + sliderWidth / 2 - sliderItemWidth / 2;
     slider.style.transform = `translateX(${offset}px)`;
 }
