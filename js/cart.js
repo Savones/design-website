@@ -18,23 +18,13 @@ function updateItemInfo(itemName) {
     }
 }
 
-function updateTotal(amount) {
-    total += Number(amount);
-    document.querySelector('.cart-total-container').innerHTML = `
-        <div class="cart-total-box">
-            <p>Price: ${total} €</p>
-            <p>Shipping: 15 €</p>
-            <p>Total: ${total + 15} €</p>
-            <button>Proceed to Checkout</button>
-        </div>`;
-}
-
 function addOne(itemName) {
     const item = JSON.parse(localStorage.getItem(itemName));
     item.amount += 1;
     localStorage.setItem(`${itemName}`, JSON.stringify(item));
     updateItemInfo(itemName)
-    updateTotal(`${item.price}`)
+    total += Number(item.price);
+    makeTotal()
 }
 
 function MinusOne(itemName) {
@@ -42,7 +32,8 @@ function MinusOne(itemName) {
     item.amount -= 1;
     localStorage.setItem(`${itemName}`, JSON.stringify(item));
     updateItemInfo(itemName)
-    updateTotal(`${Number(item.price)*-1}`)
+    total -= Number(item.price);
+    makeTotal()
 }
 
 const cartItems = JSON.parse(localStorage.getItem('cartItems'));
@@ -62,12 +53,20 @@ for (const itemName of cartItems) {
 }
 
 const cartTotalContainer = document.querySelector('.cart-container');
-cartTotalContainer.innerHTML += `
-    <div class="cart-total-container">
+cartTotalContainer.innerHTML += `<div class="cart-total-container"></div>`;
+makeTotal();
+
+function makeTotal() {
+    if (total > 0) {
+        document.querySelector('.cart-total-container').innerHTML = `
         <div class="cart-total-box">
             <p>Price: ${total} €</p>
             <p>Shipping: 15 €</p>
             <p>Total: ${total + 15} €</p>
             <button>Proceed to Checkout</button>
-        </div>
-    </div>`;
+        </div>`;
+    } else {
+        cartTotalContainer.innerHTML = `
+            <p>Cart empty.</p>`;
+    }
+}

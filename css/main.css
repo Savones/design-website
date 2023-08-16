@@ -586,26 +586,25 @@ nav li:hover, .nav-active {
     width: 100%;
     justify-content: center;
     position: absolute;
+    gap: 30px;
 }
 
 .cart-items-container{
     text-align: center;
     font-size: 18px;
-    margin-right: 30px;
     width: 400px;
 }
 
 .cart-item-box {
     background-color: #f7f4f1;
     padding: 50px;
-    margin: 10px;
+    margin-bottom: 30px;
 }
 
 .cart-plus-button {
     background-color: #500232;
     color: #ffffff;
-    padding-right: 10px;
-    padding-left: 10px;
+    width: 40px;
     padding-bottom: 5px;
     font-size: 24px;
 }
@@ -615,13 +614,10 @@ nav li:hover, .nav-active {
     align-items: center;
     justify-content: center;
     background-color: #fff8f6;
-    padding: 20px;
     width: 400px;
-    height: 300px;
+    height: 350px;
     font-size: 24px;
     text-align: center;
-    margin-left: 30px;
-    margin-top: 10px;
 }
 
 .cart-total-container button{
@@ -652,6 +648,6 @@ nav li:hover, .nav-active {
     }
     .cart-items-container {
         position: absolute;
-        margin-top: 400px;
+        margin-top: 380px;
     }
 }
