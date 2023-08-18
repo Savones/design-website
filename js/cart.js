@@ -63,7 +63,11 @@ function makeTotal() {
             <p>Price: ${total} €</p>
             <p>Shipping: 15 €</p>
             <p>Total: ${total + 15} €</p>
-            <button>Proceed to Checkout</button>
+            <div class="cart-total-buttons">
+                <button>Proceed to Checkout</button>
+                <button>Empty Cart</button>
+                <button>Back to Shop</button>
+            </div>
         </div>`;
     } else {
         cartTotalContainer.innerHTML = `

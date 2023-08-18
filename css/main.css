@@ -5,7 +5,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     font-size: 16px;
-    /* font-family: 'Cormorant Garamond', serif; */
 }
 
 h1 {
@@ -25,10 +24,7 @@ nav {
     display: flex;
     justify-content: center;
     background-color: #8da278;
-    /* background-color: #f2a896; */
     background-color: #a59282;
-    /* background-color: #9FA2B2; */
-    /* background-color: #9b826f; */
     width: 100%;
     position: fixed;
     z-index: 100;
@@ -74,7 +70,7 @@ nav li:hover, .nav-active {
 /* Hamburger icon */
 
 .menu-icon {
-    display: none; /* Hide by default for wider screens */
+    display: none;
     cursor: pointer;
     margin-top: 9px;
     margin-left: 40px;
@@ -96,11 +92,11 @@ nav li:hover, .nav-active {
     }
 
     .menu {
-        display: none; /* Hide the menu items by default */
+        display: none;
     }
 
     .menu.active {
-        display: block; /* Show the menu items when active */
+        display: block;
     }
 
     
@@ -265,7 +261,6 @@ nav li:hover, .nav-active {
     font-size: 26px;
     padding: 15px;
     border: 2px solid #56394b;
-    /* background-color: #A4907C; */
     background-color: #ffffff;
     color: #56394b;
     border-radius: 4px;
@@ -331,27 +326,58 @@ nav li:hover, .nav-active {
 
 .rooms-view {
     display: flex;
-    justify-content: center;
     width: 100%;
-    margin-top: 850px;
-    gap: 10px;
+    margin-top: 880px;
     margin-bottom: 1000px;
     background-color: #fdf2ef;
+    justify-content: center;
     padding: 50px;
-    height: 550px;
+}
+
+.services-images {
+    display: flex;
+    /* background-color: #500232; */
+    flex-direction: column;
+    gap: 20px;
+}
+
+.services-text {
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .rooms-view img {
     width: 600px;
     height: 400px;
-    align-self: flex-end;
 }
 
 .rooms-view h1 {
     color: #56394b;
-    position: absolute;
-    align-self: flex-start;
     font-size: 42px;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+.rooms-view p {
+    margin-top: 80px;
+    font-size: 26px;
+    width: 350px;
+}
+
+.services-button {
+    align-self: center;
+    text-transform: uppercase;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 4px;
+    background-color: #500232;
+    color: #ffffff;
+    margin-top: 80px;
 }
 
 /* shop grid */
@@ -372,7 +398,7 @@ nav li:hover, .nav-active {
   
   .search-button {
     position: absolute;
-    top: 50%;
+    top: 18px;
     right: 0px;
     transform: translateY(-50%);
     background-color: #56394b;
@@ -384,9 +410,32 @@ nav li:hover, .nav-active {
     font-size: 18px;
   }
   
-  .search-button i {
+.search-button i {
     color: #ffffff;
+}
+
+.search-options {
+    margin: 0;
+    background-color: #e5ddd6;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    display: none;
   }
+  
+.show-card {
+    display: flex;
+    border: 1px solid #ffffff;
+}
+
+.card h3 {
+    margin: 0;
+    margin-left: 10px;
+    padding: 10px;
+    font-weight: 100;
+}
 
 .grid-container {
     display: grid;
@@ -455,10 +504,10 @@ nav li:hover, .nav-active {
 .zoomed-item-container {
     display: grid;
     margin-top: 150px;
-    background-color: #f2f2f2;
+    background-color: #f7f4f1;
     max-width: 1200px;
     width: 90%;
-    box-shadow: 1px 1px 20px #2024433a;
+    box-shadow: 0px 0px 20px #a5928274;
 }
 
 .item-info {
@@ -470,7 +519,7 @@ nav li:hover, .nav-active {
 
 .item-price {
     font-size: 22px;
-    color: #202443;
+    color: #56394b;
 }
 
 .item-name, .item-price {
@@ -494,8 +543,8 @@ nav li:hover, .nav-active {
   }
 
   .input:focus {
-    box-shadow: 0 0 4px #E6B61D;
-    border-color: #E6B61D;
+    box-shadow: 0 0 4px #500232;
+    border-color: #500232;
   }
 
   .input::-webkit-inner-spin-button,
@@ -516,7 +565,7 @@ nav li:hover, .nav-active {
 }
 
 .input-control button {
-    background-color: #202443;
+    background-color: #56394b;
     color: #f2f2f2;
     width: 25px;
     height: 25px;
@@ -524,7 +573,7 @@ nav li:hover, .nav-active {
 }
 
 .input-control button:hover {
-    background-color: #383e6ff6;
+    background-color: #500232;
 }
 
 .plus {
@@ -540,17 +589,28 @@ nav li:hover, .nav-active {
 
 .add-cart {
     border: none;
-    background-color: #E6B61D;
-    padding: 20px;
-    font-size: 18px;
+    background-color: #56394b;
+    padding: 15px;
+    font-size: 16px;
     text-transform: uppercase;
     border-radius: 4px;
     margin-bottom: 30px;
     margin-top: 20px;
+    color: #ffffff;
 }
 
 .add-cart:hover, .cart-total-container button:hover {
-    background-color: #e6b71dc6;
+    background-color: #500232;
+}
+
+.view-cart {
+    background-color: #f7f4f1;
+    color: #500232;
+    border: 2px solid #500232;
+}
+
+.view-cart:hover {
+    background-color: #e5ddd6;
 }
 
 @media screen and (min-width: 1101px) {
@@ -615,17 +675,22 @@ nav li:hover, .nav-active {
     justify-content: center;
     background-color: #fff8f6;
     width: 400px;
-    height: 350px;
+    height: 400px;
     font-size: 24px;
     text-align: center;
 }
 
-.cart-total-container button{
+.cart-total-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-total-container button:nth-child(1){
     background-color: #56394b;
     padding: 15px;
     font-size: 20px;
     color: #ffffff;
-    margin-top: 30px;
 }
 
 .cart-item-image {
