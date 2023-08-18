@@ -419,6 +419,7 @@ nav li:hover, .nav-active {
     background-color: #e5ddd6;
     position: relative;
     z-index: 1;
+    margin-right: 33px;
 }
 
 .card {
@@ -428,6 +429,10 @@ nav li:hover, .nav-active {
 .show-card {
     display: flex;
     border: 1px solid #ffffff;
+}
+
+.show-card:hover {
+    background-color: #f2f2f2;
 }
 
 .card h3 {

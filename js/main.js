@@ -1,3 +1,5 @@
+// localStorage.clear()
+
 const items = {
   sage: {
     name: 'Sage-chair',
@@ -30,7 +32,7 @@ const items = {
   blush: {
       name: 'Blush-sofa',
       price: 230,
-      type: 'Chairs',
+      type: 'Sofas',
       image: 'images/pink-chair.jpg',
       amount: 0
   },
@@ -84,6 +86,11 @@ const items = {
       amount: 0
   }
 };
+
+if (!localStorage.getItem('types')) {
+  const types = ['Chairs', 'Tables', 'Lamps', 'Sofas'];
+  localStorage.setItem('types', JSON.stringify(types));
+}
 
 if (!localStorage.getItem('allItems')) {
   localStorage.setItem('allItems', JSON.stringify(items));
