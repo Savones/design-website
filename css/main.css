@@ -196,9 +196,22 @@ nav li:hover, .nav-active {
     font-style: italic;
     position: absolute;
     align-self: center;
-    padding-top: 670px;
-    font-size: 42px;
+    padding-top: 320px;
+    font-size: 35px;
+    color: #56394b;
+}
+
+.front-showcase-button {
+    position: absolute;
+    align-self: center;
+    margin-top: 720px;
+    padding: 15px;
+    font-size: 26px;
+    text-transform: uppercase;
+    background-color: #56394b00;
     color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 4PX;
 }
 
 @media screen and (max-width: 800px) {

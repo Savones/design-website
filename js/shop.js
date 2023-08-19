@@ -22,10 +22,13 @@ function drawAllItems() {
 
 // Finds search items and draws them
 
-function searchType(searchType) {
+function searchType(searchType, method) {
     const itemsGrid = document.querySelector('.grid-container');
     const allItems = JSON.parse(localStorage.getItem('allItems'));
-    itemsGrid.innerHTML = ''
+    
+    if (method === '2') {
+        itemsGrid.innerHTML = '';
+    }
     for (const key in allItems) {
         if (String(allItems[key].type) === String(searchType)) {
             console.log(allItems[key].name);
@@ -39,15 +42,17 @@ function searchType(searchType) {
             </div>`
         }
     }
-    handleSearchBar(searchType)
+    cards.forEach(card => {
+        card.classList.remove('show-card');
+    });
+    if (method === '2') {
+        handleSearchBar(searchType);
+    }
 }
 
 // Handle changes to searchbar
 
 function handleSearchBar(searchType) {
-    cards.forEach(card => {
-        card.classList.remove('show-card');
-    });
     searchInput.value = `${searchType}`;
 }
 
@@ -58,11 +63,26 @@ function drawCards() {
     const types = JSON.parse(localStorage.getItem('types'));
     for (const type in types) {
         searchOptions.innerHTML += `
-        <div onclick="searchType('${types[type]}')" class="card">
+        <div onclick="searchType('${types[type]}', '2')" class="card">
           <h3>${types[type]}</h3>
         </div>
         `
     }
+}
+
+// Search Press
+
+function searchPress() {
+    const searchText = searchInput.value.toLowerCase();
+    const types = JSON.parse(localStorage.getItem('types'));
+    const itemsGrid = document.querySelector('.grid-container');
+    itemsGrid.innerHTML = '';
+    
+    types.forEach(type => {
+        if (type.toLowerCase().includes(searchText)) {
+            searchType(type, '1');
+        }
+    });
 }
 
 // Searching hiding and showing cards
