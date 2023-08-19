@@ -128,6 +128,7 @@ function openItem(item) {
     const cartItems = JSON.parse(localStorage.getItem('cartItems'));
     cartItems.push(`${item}`);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    console.log(cartItems, item)
   }
   localStorage.setItem(`itemName`, JSON.stringify(item));
   window.location.href = 'item.html';

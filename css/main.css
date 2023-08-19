@@ -713,6 +713,18 @@ nav li:hover, .nav-active {
     padding: 15px;
     font-size: 20px;
     color: #ffffff;
+    text-transform: uppercase;
+}
+
+.cart-total-container button:nth-child(2),
+.cart-total-container button:nth-child(3){
+    background-color: #ffffff;
+    padding: 8px;
+    font-size: 16px;
+    width: 115px;
+    color: #500232;
+    border: 1px solid #500232;
+    align-self: center;
 }
 
 .cart-item-image {
@@ -729,12 +741,34 @@ nav li:hover, .nav-active {
     font-weight: 700;
 }
 
+.empty-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.empty-container p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.back-button {
+    margin-top: 50px;
+    background-color: #56394b;
+    padding: 15px;
+    font-size: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
 @media (max-width: 1000px) {
     .cart-total-container {
         position: absolute;
     }
     .cart-items-container {
         position: absolute;
-        margin-top: 380px;
+        margin-top: 430px;
     }
 }

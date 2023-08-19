@@ -1,3 +1,25 @@
+const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+
+console.log(cartItems)
+
+let total = 0;
+
+for (const itemName of cartItems) {
+    const item = JSON.parse(localStorage.getItem(itemName));
+    if (item.amount > 0) {
+        const cartItemsContainer = document.querySelector('.cart-items-container');
+        cartItemsContainer.innerHTML += `<div class="${item.name} cart-item-box"></div>`;
+        
+        updateItemInfo(itemName);
+
+        total += item.price * item.amount;
+    }
+}
+
+const cartTotalContainer = document.querySelector('.cart-container');
+cartTotalContainer.innerHTML += `<div class="cart-total-container"></div>`;
+makeTotal();
+
 function updateItemInfo(itemName) {
     const item = JSON.parse(localStorage.getItem(itemName));
 
@@ -36,25 +58,16 @@ function MinusOne(itemName) {
     makeTotal()
 }
 
-const cartItems = JSON.parse(localStorage.getItem('cartItems'));
-
-let total = 0;
-
-for (const itemName of cartItems) {
-    const item = JSON.parse(localStorage.getItem(itemName));
-    if (item.amount > 0) {
-        const cartItemsContainer = document.querySelector('.cart-items-container');
-        cartItemsContainer.innerHTML += `<div class="${item.name} cart-item-box"></div>`;
-        
-        updateItemInfo(itemName);
-
-        total += item.price * item.amount;
+function emptyCart() {
+    console.log(cartItems)
+    for (const itemName in cartItems) {
+        const item = JSON.parse(localStorage.getItem(cartItems[itemName]));
+        item.amount = 0;
+        localStorage.setItem(`${cartItems[itemName]}`, JSON.stringify(item));
     }
+    total = 0;
+    makeTotal();
 }
-
-const cartTotalContainer = document.querySelector('.cart-container');
-cartTotalContainer.innerHTML += `<div class="cart-total-container"></div>`;
-makeTotal();
 
 function makeTotal() {
     if (total > 0) {
@@ -64,13 +77,18 @@ function makeTotal() {
             <p>Shipping: 15 €</p>
             <p>Total: ${total + 15} €</p>
             <div class="cart-total-buttons">
-                <button>Proceed to Checkout</button>
-                <button>Empty Cart</button>
-                <button>Back to Shop</button>
+                <button>Checkout</button>
+                <button onclick="openShop()">Back to Shop</button>
+                <button onclick="emptyCart()">Empty Cart</button>
             </div>
         </div>`;
     } else {
         cartTotalContainer.innerHTML = `
-            <p>Cart empty.</p>`;
+            <div class="empty-container">
+            <p>Your cart is currently empty.</p>
+            <p>You can visit shop to add items to your cart.</p>
+            <button onclick="openShop()" class="back-button">Visit Shop</button>
+            </div>
+            `;
     }
 }
