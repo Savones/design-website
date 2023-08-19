@@ -87,6 +87,14 @@ const items = {
   }
 };
 
+if (!localStorage.getItem('names')) {
+  const names = [];
+  for (const key in items) {
+    names.push(items[key].name);
+  }
+  localStorage.setItem('names', JSON.stringify(names));
+}
+
 if (!localStorage.getItem('types')) {
   const types = ['Chairs', 'Tables', 'Lamps', 'Sofas'];
   localStorage.setItem('types', JSON.stringify(types));

@@ -1,3 +1,7 @@
+// Draws all the items and cards
+// Makes changes to drawn items and card when searched
+
+const drawnItems = new Set(); // Tracks which items have been drawn
 
 drawAllItems()
 drawCards()
@@ -20,7 +24,29 @@ function drawAllItems() {
     }
 }
 
-// Finds search items and draws them
+// Draw all cards
+
+function drawCards() {
+    const names = JSON.parse(localStorage.getItem('names'));
+    const searchOptions = document.querySelector('.search-options');
+    const types = JSON.parse(localStorage.getItem('types'));
+    for (const type in types) {
+        searchOptions.innerHTML += `
+        <div onclick="searchCard('${types[type]}')" class="card">
+          <h3>${types[type]}</h3>
+        </div>
+        `
+    }
+    for (const name in names) {
+        searchOptions.innerHTML += `
+        <div onclick="searchCard('${names[name]}')" class="card names-card">
+          <h3>${names[name]}</h3>
+        </div>
+        `
+    }
+}
+
+// Finds searched items and draws them
 
 function searchType(searchType, method) {
     const itemsGrid = document.querySelector('.grid-container');
@@ -29,9 +55,9 @@ function searchType(searchType, method) {
     if (method === '2') {
         itemsGrid.innerHTML = '';
     }
+
     for (const key in allItems) {
-        if (String(allItems[key].type) === String(searchType)) {
-            console.log(allItems[key].name);
+        if ((String(allItems[key].type) === String(searchType) || String(allItems[key].name) === String(searchType)) && !drawnItems.has(key)) {
             itemsGrid.innerHTML += `
             <div class="grid-item" onclick="openItem('${key}')">
             <img src="${allItems[key].image}" alt="flowers">
@@ -39,50 +65,56 @@ function searchType(searchType, method) {
             <p>${allItems[key].name}</p>
             <p>${allItems[key].price} €</p>
             </div>
-            </div>`
+            </div>`;
+            drawnItems.add(key);
         }
     }
+
     cards.forEach(card => {
         card.classList.remove('show-card');
     });
+
     if (method === '2') {
         handleSearchBar(searchType);
     }
 }
 
-// Handle changes to searchbar
+
+// Searchbar input becomes searched card name
 
 function handleSearchBar(searchType) {
     searchInput.value = `${searchType}`;
 }
 
-// Makes the cards
+// Card Pressed
 
-function drawCards() {
-    const searchOptions = document.querySelector('.search-options');
-    const types = JSON.parse(localStorage.getItem('types'));
-    for (const type in types) {
-        searchOptions.innerHTML += `
-        <div onclick="searchType('${types[type]}', '2')" class="card">
-          <h3>${types[type]}</h3>
-        </div>
-        `
-    }
+function searchCard(searchInput) {
+    drawnItems.clear();
+    searchType(searchInput, '2')
+    drawnItems.clear();
 }
 
-// Search Press
+// Searchbutton Pressed
 
 function searchPress() {
+    drawnItems.clear();
     const searchText = searchInput.value.toLowerCase();
     const types = JSON.parse(localStorage.getItem('types'));
+    const names = JSON.parse(localStorage.getItem('names'));
     const itemsGrid = document.querySelector('.grid-container');
     itemsGrid.innerHTML = '';
     
+    names.forEach(name => {
+        if (name.toLowerCase().includes(searchText)) {
+            searchType(name, '1');
+        }
+    });
     types.forEach(type => {
         if (type.toLowerCase().includes(searchText)) {
             searchType(type, '1');
         }
     });
+    drawnItems.clear();
 }
 
 // Searching hiding and showing cards

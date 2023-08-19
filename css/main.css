@@ -438,6 +438,10 @@ nav li:hover, .nav-active {
 .card {
     display: none;
   }
+
+.names-card {
+    background-color: #fdf2ef;
+}
   
 .show-card {
     display: flex;
