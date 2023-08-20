@@ -60,7 +60,7 @@ nav li {
 }
 
 nav li:hover, .nav-active {
-    color: #fce3dd
+    color: #efcac0;
 }
 
 .menu-icon:hover .bar {
@@ -349,7 +349,6 @@ nav li:hover, .nav-active {
 
 .services-images {
     display: flex;
-    /* background-color: #500232; */
     flex-direction: column;
     gap: 20px;
 }
@@ -366,7 +365,7 @@ nav li:hover, .nav-active {
 
 .rooms-view img {
     width: 600px;
-    height: 400px;
+    height: auto;
 }
 
 .rooms-view h1 {
@@ -377,8 +376,8 @@ nav li:hover, .nav-active {
 }
 
 .rooms-view p {
-    margin-top: 80px;
-    font-size: 26px;
+    margin-top: 50px;
+    font-size: 24px;
     width: 350px;
 }
 
@@ -390,7 +389,40 @@ nav li:hover, .nav-active {
     border-radius: 4px;
     background-color: #500232;
     color: #ffffff;
-    margin-top: 80px;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+    .rooms-view {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .services-images {
+        align-items: center;
+        margin-top: 70px;
+    }
+
+    .rooms-view img {
+        width: 80%;
+    }
+
+    .services-text {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .rooms-view h1 {
+        font-size: 32px;
+    }
+    .rooms-view p {
+        font-size: 18px;
+    }
+    .services-button {
+        font-size: 20px;
+        padding: 15px;
+    }
 }
 
 /* shop grid */
@@ -689,6 +721,7 @@ nav li:hover, .nav-active {
     width: 40px;
     padding-bottom: 5px;
     font-size: 24px;
+    border-radius: 4px;
 }
 
 .cart-total-container {
@@ -714,6 +747,7 @@ nav li:hover, .nav-active {
     font-size: 20px;
     color: #ffffff;
     text-transform: uppercase;
+    border-radius: 4px;
 }
 
 .cart-total-container button:nth-child(2),
@@ -725,6 +759,7 @@ nav li:hover, .nav-active {
     color: #500232;
     border: 1px solid #500232;
     align-self: center;
+    border-radius: 4px;
 }
 
 .cart-item-image {
@@ -761,6 +796,7 @@ nav li:hover, .nav-active {
     font-size: 20px;
     color: #ffffff;
     text-transform: uppercase;
+    border-radius: 4px;
 }
 
 @media (max-width: 1000px) {
@@ -771,4 +807,97 @@ nav li:hover, .nav-active {
         position: absolute;
         margin-top: 430px;
     }
+}
+
+/* Services */
+
+.services-header {
+    margin-top: 100px;
+    text-transform: uppercase;
+    font-weight: 0;
+    text-align: center;
+    font-size: 46px;
+    width: 100%;
+}
+
+.services-container {
+    max-width: 2000px;
+}
+
+.packages-container, .individual-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.sub-header {
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+.packages-list, .individual-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.package-item, .individual-item {
+    width: 350px;
+    height: 230px;
+    background-color: #ffefeb;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.package-item:nth-child(3) {
+    background-color: #efcac0;
+}
+
+.package-item:nth-child(2) {
+    background-color: #fce3dd;
+}
+
+.package-item h3, .individual-item h3 {
+    font-size: 28px;
+    font-weight: 100;
+    margin-bottom: 0px;
+    color: #000000;
+    text-align: center;
+}
+
+.hidden-container {
+    display: none;
+}
+
+.package-list, .individual-list {
+    font-size: 20px;
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 20px;
+    list-style-position: outside;
+}
+
+.package-list li {
+    margin: 10px;
+}
+
+.package-item p {
+    font-size: 22px;
+    align-self: center;
+}
+
+.details-button {
+    padding: 15px;
+    font-size: 18px;
+    width: auto;
+    text-transform: uppercase;
+    align-self: center;
+    background-color: #56394b;
+    border-radius: 4px;
+    color: #ffffff;
+    margin-top: 10px;
 }

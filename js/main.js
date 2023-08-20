@@ -109,6 +109,10 @@ if (!localStorage.getItem('cartItems')) {
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
+function openServices() {
+  window.location.href = 'services.html';
+}
+
 function openShop() {
   window.location.href = 'shop.html';
 }

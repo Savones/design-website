@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        Bloom design
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  </head>
+    
+  <body>
+      
+    <nav class="navbar">
+        <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="menu" id="menu">
+            <li>Showcase</li>
+            <li onclick="openServices()" class="nav-active">Services</li>
+            <li onclick="openShop()">Shop</li>
+            <li>Story</li>
+        </ul>
+        <div class="icons">
+          <li onclick="openHome()"><i class="fas fa-home"></i></li>
+          <li onclick="openCart()"><i class="fas fa-shopping-cart"></i></li>
+          <li><i class="fas fa-search"></i></li>
+          <li><i class="fas fa-user"></i></li>
+        </div>
+      </nav>
+
+    <div class="services-header">
+        <p>Explore Our Diverse Services</p>
+    </div>
+
+    <div class="services-container">
+        <div class="packages-container">
+            <div class="sub-header">
+                <p>Design Packages</p>
+            </div>
+            <div class="packages-list">
+                <div class="package-item">
+                    <h3>Essentials Makeover</h3>
+                    <p>€400 - €800</p>
+                    <button onclick="showDetails('packageOne')" class="details-button">Details</button>
+                    <ul class="package-list hidden-container" id="packageOne">
+                        <li>Perfect for refreshing your space on a budget</li>
+                        <li>Furniture arrangement and layout optimization</li>
+                        <li>Color and décor recommendations</li>
+                        <li>3D visualization of the redesigned space</li>
+                        <li>Virtual design support</li>
+                    </ul>
+                </div>
+                <div class="package-item">
+                    <h3>Room-Specific Revamp</h3>
+                    <p>€640 - €1200</p>
+                    <button onclick="showDetails('packageTwo')" class="details-button">Details</button>
+                    <ul class="package-list hidden-container" id="packageTwo">
+                        <li>Enhancing a specific room's functionality and aesthetics</li>
+                        <li>Room analysis and needs assessment</li>
+                        <li>Furniture and décor selection focused on the room's purpose</li>
+                        <li>Strategic lighting and layout design</li>
+                        <li>Styling and final touches for a cohesive look</li>
+                        <li>Consultation for future upgrades</li>
+                    </ul>
+                </div>
+                <div class="package-item">
+                    <h3>Complete Transformation</h3>
+                    <p>€1200 - €2400</p>
+                    <button onclick="showDetails('packageThree')" class="details-button">Details</button>
+                    <ul class="package-list hidden-container" id="packageThree">
+                        <li>Ideal for a comprehensive makeover of your entire space</li>
+                        <li>Personalized concept and theme creation</li>
+                        <li>Detailed furniture selection and sourcing</li>
+                        <li>Custom color palette and material suggestions</li>
+                        <li>On-site visits and project management</li>
+                        <li>Access to exclusive design discounts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="individual-container">
+            <div class="sub-header">
+                <p>Individual Services</p>
+            </div>
+            <div class="individual-list">
+                <h3>Space Planning</h3>
+                <h3>Color Consultation</h3>
+                <h3>Furniture Selection</h3>
+            </div>
+            <div class="individual-list">
+                <h3>Lighting Design</h3>
+                <h3>Material Selection</h3>
+                <h3>Art and Wall Decor</h3>
+            </div>
+            <div class="individual-list">
+                <h3>Consultation Services</h3>
+                <h3>Virtual Design Support</h3>
+                <h3>Specialized Room Design</h3>
+            </div>
+        </div>
+    </div>
+
+    <script src = "js/main.js" ></script>
+    <script src = "js/services.js" ></script>
+  </body>
+</html>
