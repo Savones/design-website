@@ -829,11 +829,13 @@ nav li:hover, .nav-active {
     flex-direction: column;
     align-items: center;
     margin: 30px 0;
+    margin-bottom: 80px;
 }
 
 .sub-header {
-    font-size: 38px;
+    font-size: 32px;
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 .packages-list, .individual-list {
@@ -851,6 +853,7 @@ nav li:hover, .nav-active {
     flex-direction: column;
     padding: 25px;
     border-radius: 10px;
+    transition: height 1s ease;
 }
 
 .package-item:nth-child(3) {
@@ -879,6 +882,7 @@ nav li:hover, .nav-active {
     list-style-position: inside;
     padding-left: 20px;
     list-style-position: outside;
+    overflow: hidden;
 }
 
 .package-list li {
@@ -893,11 +897,31 @@ nav li:hover, .nav-active {
 .details-button {
     padding: 15px;
     font-size: 18px;
-    width: auto;
+    width: 150px;
     text-transform: uppercase;
     align-self: center;
     background-color: #56394b;
     border-radius: 4px;
     color: #ffffff;
     margin-top: 10px;
+    transition: 0.5s;
+}
+
+.details-button:hover {
+    background-color: #500232;
+}
+
+@keyframes expand {
+    from {
+        max-height: 230px;
+        opacity: 1;
+    }
+    to {
+        max-height: 1000px;
+        opacity: 1;
+    }
+}
+
+.package-item.expanded {
+    animation: expand 3s ease;
 }
